@@ -58,7 +58,6 @@ const _init = async () => {
       ...defaultOptions.loadOptions,
       ...props.loadOptions
     });
-    await sleep(3000);
     map = new amap!.Map(MAP_ID, {
       ...defaultOptions.mapOptions,
       ...props.mapOptions
