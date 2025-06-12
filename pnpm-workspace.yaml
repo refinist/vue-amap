@@ -1,0 +1,10 @@
+onlyBuiltDependencies:
+  - esbuild
+  - javascript-obfuscator
+
+catalogs:
+  mpegts.js1.7.3:
+    mpegts.js: 1.7.3
+
+  mpegts.js:
+    mpegts.js: ^1.8.0

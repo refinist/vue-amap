@@ -1,0 +1,82 @@
+{
+  "name": "@refinist/vue-amap",
+  "version": "0.0.0",
+  "description": "Using Vue3 component to use AMap",
+  "keywords": [
+    "vue",
+    "amap",
+    "vue3",
+    "vue-amap"
+  ],
+  "homepage": "https://github.com/refinist/vue-amap#readme",
+  "bugs": {
+    "url": "https://github.com/refinist/vue-amap/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/refinist/vue-amap.git"
+  },
+  "license": "MIT",
+  "author": "Jeff Wang",
+  "sideEffects": [
+    "dist/index.css"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./index.css": "./dist/index.css",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "format": "prettier --cache --write .",
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "play": "vite",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp && pnpm publish",
+    "test": "vitest",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "prettier": "@refinist/prettier-config",
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1"
+  },
+  "devDependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@refinist/eslint-config": "^0.0.3",
+    "@refinist/prettier-config": "^0.0.3",
+    "@types/node": "^22.15.30",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "bumpp": "^10.1.1",
+    "eslint": "^9.28.0",
+    "happy-dom": "^17.6.3",
+    "less": "^4.3.0",
+    "prettier": "^3.5.3",
+    "tsdown": "^0.12.7",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vite": "npm:rolldown-vite@latest",
+    "vitest": "^3.2.2",
+    "vue": "^3.5.16",
+    "vue-tsc": "^2.2.10"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "packageManager": "pnpm@10.12.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
