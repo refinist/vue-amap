@@ -1,7 +1,7 @@
 {
   "name": "@refinist/vue-amap",
   "version": "0.0.2",
-  "description": "Using Vue3 component to use AMap",
+  "description": "Using Vue3 component to use Amap",
   "keywords": [
     "vue",
     "amap",

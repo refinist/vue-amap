@@ -6,7 +6,7 @@ export type Map = Record<string, any>;
 
 export type AMap = Record<string, any>;
 
-export type Instance = {
+export type MapInstance = {
   map: Map;
   AMap: AMap;
 };

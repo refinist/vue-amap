@@ -1,5 +1,5 @@
 import { ref, shallowRef, watch } from 'vue';
-import type { Map, AMap, Status, Instance } from './types';
+import type { Map, AMap, Status, MapInstance } from './types';
 
 export const useAmap = () => {
   const status = ref<Status>('loading');
@@ -11,7 +11,7 @@ export const useAmap = () => {
     map: null
   });
 
-  const init = (e: Instance) => {
+  const init = (e: MapInstance) => {
     instance.value = e;
   };
   const statusChange = (p: Status) => {
@@ -23,11 +23,11 @@ export const useAmap = () => {
 
   // Ensure operations are performed after the map is ready.
   // Can be executed independently of handleComplete to accommodate more business scenarios.
-  const whenAMapReady = (
-    cb?: (instance: Instance) => void
-  ): Promise<Instance> => {
-    let resolve!: (value: Instance) => void;
-    const p = new Promise<Instance>(_ => (resolve = _));
+  const whenAmapReady = (
+    cb?: (instance: MapInstance) => void
+  ): Promise<MapInstance> => {
+    let resolve!: (value: MapInstance) => void;
+    const p = new Promise<MapInstance>(_ => (resolve = _));
 
     const { map, AMap } = get();
     if (map && AMap) {
@@ -69,6 +69,6 @@ export const useAmap = () => {
     amapStatusChange: statusChange,
     getAmap: get,
     amapStatus: status,
-    whenAMapReady
+    whenAmapReady
   };
 };

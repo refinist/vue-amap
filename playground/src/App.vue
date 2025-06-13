@@ -8,7 +8,7 @@ onMounted(() => {
   console.log('amapRef :>> ', amapRef.value);
 });
 
-const { amapInit, getAmap, amapStatus, amapStatusChange, whenAMapReady } =
+const { amapInit, getAmap, amapStatus, amapStatusChange, whenAmapReady } =
   useAmap();
 
 watchEffect(() => {
@@ -35,8 +35,8 @@ const handleError = e => {};
 // Test the edge case of operating the map before it is fully loaded
 let marker;
 const handleOperateMapBeforeLoadedMaybe = async () => {
-  // whenAMapReady Usage 1
-  // whenAMapReady(({ map, AMap }) => {
+  // whenAmapReady Usage 1
+  // whenAmapReady(({ map, AMap }) => {
   //   if (!marker) {
   //     marker = new AMap.Marker({
   //       icon: '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
@@ -47,8 +47,8 @@ const handleOperateMapBeforeLoadedMaybe = async () => {
   //   }
   // });
 
-  // whenAMapReady Usage 2
-  const { map, AMap } = await whenAMapReady();
+  // whenAmapReady Usage 2
+  const { map, AMap } = await whenAmapReady();
   if (!marker) {
     marker = new AMap.Marker({
       icon: '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',

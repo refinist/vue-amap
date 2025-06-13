@@ -2,7 +2,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import AMapLoader from '@amap/amap-jsapi-loader';
 import { defaultOptions } from './defaultOptions';
-import { sleep, toCssUnit } from './utils';
+import { toCssUnit } from './utils';
 import type { Status, Map, AMap } from './types';
 
 defineOptions({
